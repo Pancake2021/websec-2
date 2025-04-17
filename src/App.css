@@ -1,0 +1,280 @@
+/* Базовые стили */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+.main-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    gap: 20px;
+}
+
+.main-title {
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    color: #007bff;
+    margin-bottom: 20px;
+}
+
+/* Контейнеры */
+.search-container,
+.find-way-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 800px;
+    gap: 15px;
+}
+
+.search-list-container,
+.station-info-container,
+.between-stations {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+}
+
+/* Поиск станций */
+.search {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.search input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.pagination button {
+    padding: 5px 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.pagination button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+.pagination button:hover:not(:disabled) {
+    background-color: #0056b3;
+}
+
+/* Список станций */
+.stations-container {
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.station-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+    transition: background-color 0.2s ease;
+}
+
+.station-item:hover {
+    background-color: #f0f0f0;
+}
+
+.show-info-button img {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+/* Информация о станции */
+.station-info {
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.station-info-item {
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+/* Маршруты между станциями */
+.between-stations-input {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.between-stations label {
+    font-size: 14px;
+    color: #555;
+}
+
+.between-stations input,
+.between-stations select {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.between-stations button {
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.between-stations button:hover {
+    background-color: #0056b3;
+}
+
+.between-stations-result {
+    max-height: 300px;
+    overflow-y: auto;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #fff;
+    padding: 10px;
+}
+
+.between-result-item {
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.between-result-item:last-child {
+    border-bottom: none;
+}
+
+#map {
+    width: 100%;
+    height: 400px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+@media (max-width: 768px) {
+    #map {
+        height: 300px;
+    }
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .main-title {
+        font-size: 20px;
+    }
+
+    .search-container,
+    .find-way-container {
+        padding: 10px;
+    }
+
+    .search input {
+        font-size: 14px;
+    }
+
+    .between-stations input,
+    .between-stations select {
+        font-size: 14px;
+    }
+}
+
+.favorites-container {
+    margin: 20px 0;
+    padding: 15px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.favorites-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.favorite-station {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: white;
+    border-radius: 6px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    min-width: 200px;
+}
+
+.favorite-actions {
+    display: flex;
+    gap: 5px;
+}
+
+.favorite-actions button {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.favorite-actions button:first-child {
+    background-color: #007bff;
+    color: white;
+}
+
+.favorite-actions button:last-child {
+    background-color: #dc3545;
+    color: white;
+}
+
+.station-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.favorite-button {
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    padding: 5px;
+    color: #6c757d;
+}
+
+.favorite-button.active {
+    color: #ffc107;
+}
+
+.favorite-button:hover {
+    color: #ffc107;
+}
